@@ -6,7 +6,7 @@ output: html_document
 ---
 ### Inferencia metabolica
 
-Vamos a utilizar prodigal para predecir las proteinas:
+Vamos a utilizar [prodigal](https://github.com/hyattpd/Prodigal) para predecir las proteinas:
 
 ```{bash, eval=FALSE}
 for i in /home/mirna/07.Bins/Genoma/01.Bins_named/*.fa ; do prodigal -i $i -o $i.txt -a $i.faa ; done
@@ -20,7 +20,7 @@ grep ">" *.faa
 
 ### KEEG
 
-Okay, ahora vamos a utilizar kofam_scan para anotar las proteinas.
+Okay, ahora vamos a utilizar [kofam_scan](https://github.com/takaram/kofam_scan) para anotar las proteinas.
 
 Vamos a dividirnos en equipos para hacer la anotacion de los bins!
 
@@ -151,7 +151,7 @@ plot_heatmap(tibble_ko=Methane_metabolisms_GOM,
              calc="Binary")
 ```
 
-### Anotacion con InterproScan
+### Anotacion con [InterproScan](https://interproscan-docs.readthedocs.io/en/latest/)
 
 ```{bash, eval=FALSE}
 for i in $(ls *.faa); do sed -i "s/\*//g" $i; done
